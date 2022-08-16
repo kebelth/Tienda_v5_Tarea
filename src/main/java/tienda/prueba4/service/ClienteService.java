@@ -5,6 +5,9 @@ import tienda.prueba4.domain.Cliente;
 
 public interface ClienteService {
 
+
+    public Cliente getByApellidos(Cliente cliente);
+
     public List<Cliente> getClientes();
 
     public void save(Cliente cliente);

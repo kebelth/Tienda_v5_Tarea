@@ -26,6 +26,13 @@ public class ClienteServiceImlp implements ClienteService {
     
     
     
+    @Override
+    @Transactional(readOnly = true)
+    public Cliente getByApellidos(Cliente cliente){
+
+         return ((List<Cliente>) clienteDao.findByApellidos (cliente.getApellidos ())).get(0);
+
+    }
     
     
     @Override 
@@ -59,5 +66,8 @@ public class ClienteServiceImlp implements ClienteService {
         return clienteDao.findById(cliente.getIdCliente()).orElse(null);
         
     }
+
+   
+   
     
 }
